@@ -26,33 +26,33 @@ ul{
   padding: 10px;
 }
 
-#nav{
+nav{
   height: 40px;
   background: #666;
 }
 
-#nav ul{
+nav ul{
   padding-top: 13px;
   padding-left: 10px;
 }
 
-#nav li{
+nav li{
   list-style: none;
   float: left;
   padding-right: 20px;
 }
 
-#nav .active{
+nav .active{
   font-weight: bold;
   color: white;
 }
 
-#main {
+main {
   float: left;
   width: 60%;
 }
 
-#sidebar {
+aside {
   float: right;
   width: 30%;
   background: #666;
@@ -60,7 +60,7 @@ ul{
   padding: 10px;
 }
 
-#footer {
+footer {
   text-align: left;
   padding: 5px;
   background: #555;
