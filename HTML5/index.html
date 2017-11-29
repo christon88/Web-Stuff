@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML5 Functions</title>
+  </head>
+  <body>
+    <h1>SVG</h1>
+    <svg width = "300" height = "250">
+      <circle cx = "100" cy = "150" r = "80" stroke = "red" stroke-width = "4" fill = "green" />
+      Your browser does not support inline SVG
+    </svg>
+
+    <h1>Canvas</h1>
+      <canvas id="myCanvas" width="300" height="300"></canvas>
+      <style media="screen">
+        canvas{
+          border: 1px #000 solid;
+          background: #f4f4f4;
+        }
+      </style>
+      <script type="text/javascript">
+        var c = document.getElementById('myCanvas');
+        var ctx = c.getContext('2d');
+
+        /*Rectangle
+        ctx.fillStyle='red';
+        ctx.fillRect(75 ,75, 150, 150);
+        */
+        //Line
+        ctx.moveTo(0, 0);
+        ctx.lineTo(250, 150);
+        ctx.stroke();
+
+
+      </script>
+
+
+
+    <h1>Video</h1>
+    <video id="myVideo" src="http://v2v.cc/~j/theora_testsuite/320x240.ogg" controls loop poster="posterimage.jpg">
+      Your browser does not support video.
+    </video>
+    <h1>Audio</h1>
+    <audio id="myAudio" src="http://www.freesound.org/data/previews/95/95026_57789-lq.mp3"  loop>
+      Your browser does not support audio.
+    </audio>
+
+    <script>
+      document.getElementById('myAudio').volume=0.2
+    </script>
+
+    <div>
+      <button onclick="document.getElementById('myAudio').play()">Play</button>
+
+      <button onclick="document.getElementById('myAudio').pause()">Pause</button>
+
+      <button onclick="document.getElementById('myAudio').volume-=0.1">Volume -</button>
+
+      <button onclick="document.getElementById('myAudio').volume+=0.1">Volume +</button>
+    </div>
+
+    <script type="text/javascript">
+      var v = document.getElementById('myVideo')
+      v.play();
+    </script>
+
+  </body>
+</html>

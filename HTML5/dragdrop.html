@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Drag & Drop</title>
+    <style media="screen">
+      #box{
+        width: 300px;
+        height: 150px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+    <script type="text/javascript">
+      function allowDrop(ev){
+        ev.preventDefault();
+      }
+
+      function drag(ev){
+        ev.dataTransfer.setData("text", ev.target.id);
+      }
+
+      function drop(ev){
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data)
+      );
+      }
+    </script>
+
+
+  </head>
+
+  <body>
+    <h1>Drag & Drop!</h1>
+    <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <div id="box" ondrop="drop(event)" ondragover="allowDrop(event)"><img id="drag1" src="thing.jpg" width = "291" height = "145" draggable="true" ondragstart="drag(event)"></div>
+
+    <h1 contenteditable = "true">This heading can be edited</h1>
+
+  </body>
+</html>
