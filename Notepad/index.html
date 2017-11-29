@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Notepad</title>
+    <script type="text/javascript">
+      function getNote(){
+        if (localStorage.getItem('note')) {
+          var note = localStorage.getItem('note');
+        } else {
+          var note = "This is an editable, locally stored, organic notepad.<br>Feel free to type here.";
+        }
+        document.getElementById('note').innerHTML = note;
+      }
+
+      function saveNote(id){
+        var note = document.getElementById('note').innerHTML;
+        localStorage.setItem('note', note);
+      }
+
+      function clearNote(){
+        localStorage.removeItem('note');
+      }
+    </script>
+    <style media="screen">
+      body{
+        font-family: sans-serif;
+        line-height: 1.6em;
+        background: #f4f4f4;
+      }
+      header, footer{
+        text-align: center;
+      }
+      #container{
+        border: 1px solid #ccc;
+        width: 30%;
+        margin: 50px auto;
+        background: #ffffa5;
+        overflow: hidden;
+        padding: 20px;
+        min-height: 300px;
+      }
+      [contenteditable]:focus {
+        outline: 0px solid transparent;
+      }
+      .clear{
+        text-decoration: none;
+        background: #333;
+        color: #fff;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Notepad</h1>
+    </header>
+    <section id="container">
+      <div id="note" contenteditable="true" onkeyup="saveNote(this.id)"><div>
+    </section>
+    <footer>
+      <div class="">
+        <a href="" class="clear" onclick="clearNote()">Clear Note</a>
+      </div>
+      <p>Notepad 2017</p>
+    </footer>
+
+    <script type="text/javascript">
+      getNote();
+    </script>
+  </body>
+</html>
