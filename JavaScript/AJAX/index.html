@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax</title>
+  </head>
+
+  <body>
+    <h1 id="header">Change this text</h1>
+    <button onclick="changeText()">Change</button>
+
+    <script type="text/javascript">
+      function changeText(e){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+          if(xhttp.readyState == 4 && xhttp.status == 200){
+            var oldText = document.getElementById('header');
+            var newText = xhttp.responseText;
+            oldText.innerHTML = newText;
+          }
+        }
+        xhttp.open('GET', 'file.txt', true);
+        xhttp.send();
+
+      }
+    </script>
+  </body>
+</html>
