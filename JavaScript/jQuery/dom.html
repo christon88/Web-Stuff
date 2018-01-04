@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOM Manipulation</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+      <style media="screen">
+        .green{
+          color: green;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <input type="text" id="i1">
+    <ul id="list1">
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+    </ul>
+
+
+    <script>
+      $(document).ready(function() {
+        $('.d1').text('Hello');
+        $('#i1').val('Input')
+        alert($('#i1').val());
+        $('.d2').html('<h1>Hello World</h1>');
+        $('#list1').append('<li>Last Item</li>')
+        $('#list1').prepend('<li>First Item</li>')
+        $('#list1').before('<p>Before list</p>')
+        $('#list1').after('<p>After list</p>')
+        $('.d1').addClass('green')
+
+      });
+    </script>
+  </body>
+</html>

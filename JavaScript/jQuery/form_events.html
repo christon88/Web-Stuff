@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery | Forms</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <form class="myForm">
+      <div class="">
+        <label>Name</label><br>
+        <input type="text">
+      </div>
+      <div class="">
+        <label>Email</label><br>
+        <input type="text">
+      </div>
+      <div class="">
+        <label>Location</label><br>
+        <input type="text" value="New York">
+      </div>
+      <div class="">
+        <label>Category</label><br>
+        <select>
+          <option value="1">Category 1</option>
+          <option value="2">Category 2</option>
+          <option value="3">Category 3</option>
+        </select>
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+    <br><br>
+    <div class="output">
+
+    </div>
+
+    <script>
+
+      $(document).ready(function() {
+        //Focus & Blur event
+        $('.myForm input').focus(function() {
+          $(this).css('background', '#f3f3f3');
+
+          $(this).blur(function(event) {
+            $(this).css('background', 'none');
+          });
+        });
+
+        //change event
+        $('.myForm select').change(function() {
+          var cat = "";
+          $('select option:selected').each(function() {
+            cat += $(this).text() + " ";
+          });
+          $('.output').text(cat);
+        });
+
+        //select event
+        $(':input').select(function(){
+          $('.output').text('Something was selected').show();
+        });
+
+        //submit event
+        $('.myForm').submit(function(e) {
+          e.preventDefault();
+          $('.output').text('Form Submitted')
+        });
+
+
+      });
+
+    </script>
+
+  </body>
+</html>
