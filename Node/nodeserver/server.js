@@ -1,10 +1,11 @@
 var http = require('http');
 var fs = require('fs');
+var path = require('path');
 
 var host = '127.0.0.1';
 var port = '3000';
 
-fs.readFile('index.html', function(err, html){
+fs.readFile('./index.html', function(err, html){
   if(err){
     console.log(err);
     return;
